@@ -1,0 +1,34 @@
+{
+  "name": "image-duplicates-webpack-plugin",
+  "version": "0.0.7",
+  "type": "module",
+  "description": "查找项目中是否有重复图片",
+  "keywords": [
+    "webpack-plugin",
+    "image",
+    "duplicates"
+  ],
+  "exports": {
+    ".": {
+      "require": "./dist/image-duplicates-webpack-plugin.cjs",
+      "import": "./dist/image-duplicates-webpack-plugin.mjs"
+    }
+  },
+  "main": "dist/image-duplicates-webpack-plugin.cjs",
+  "module": "dist/image-duplicates-webpack-plugin.mjs",
+  "scripts": {
+    "build": "rollup --config ./rollup.config.js"
+  },
+  "author": "微光北下",
+  "license": "MIT",
+  "dependencies": {
+    "picocolors": "^1.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-terser": "^0.4.1",
+    "rollup": "^3.21.5"
+  }
+}
