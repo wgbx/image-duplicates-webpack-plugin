@@ -1,4 +1,4 @@
-const { writeFile, readdirSync, existsSync, statSync, readFileSync } = require('node:fs')
+const { writeFileSync, readdirSync, existsSync, statSync, readFileSync } = require('node:fs')
 const { resolve, join, extname } = require('node:path')
 const log = require('picocolors')
 const { createHash } = require('crypto');
@@ -54,10 +54,10 @@ const getFileMap = (userOptions) => {
   return hashTable
 }
 
-const setFile = (data) => {
-  writeFile('./image-duplicates.json', JSON.stringify(data), (err) => {
+const setFile = (data, name = 'image-duplicates.json') => {
+  writeFileSync(`./${name}`, JSON.stringify(data, null, 2), (err) => {
     if (err) {
-      log.red('image-duplicates.json 文件写入失败')
+      log.red(`${name} 文件写入失败`)
     }
   })
 }
