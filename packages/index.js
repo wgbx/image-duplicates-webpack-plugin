@@ -1,7 +1,7 @@
 const { writeFile, readdirSync, existsSync, statSync, readFileSync } = require('node:fs')
 const { resolve, join, extname } = require('node:path')
 const log = require('picocolors')
-const crypto = require('node:crypto')
+const { createHash } = require('crypto');
 
 const defaultOptions = {
   imagePath: 'src',
@@ -26,7 +26,7 @@ const getFileMap = (userOptions) => {
       })
     } else if (imageType.includes(extname(filePath).toLowerCase())) {
       const fileData = readFileSync(filePath)
-      const hash = crypto.createHash('md5').update(fileData).digest('hex')
+      const hash = createHash('md5').update(fileData).digest('hex')
       let fileRelativePath = filePath.replaceAll('\\', '/')
       if (!isAbsolutePath) {
         fileRelativePath = filePath.replace(assetPath, '').replaceAll('\\', '/')
@@ -68,7 +68,9 @@ class ImageDuplicatesWebpackPlugin {
     const dataMap = getFileMap(userOptions)
     const sameFile = []
     dataMap.forEach((item) => {
-      if (item.length > 1) sameFile.push({ '相同图片': item })
+      if (item.length > 1) {
+        sameFile.push({ '相同图片': item })
+      }
     })
     setFile(sameFile)
   }

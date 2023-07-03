@@ -1,13 +1,17 @@
 {
   "name": "image-duplicates-webpack-plugin",
-  "version": "0.0.7",
-  "type": "module",
+  "version": "0.0.8",
   "description": "查找项目中是否有重复图片",
   "keywords": [
     "webpack-plugin",
     "image",
     "duplicates"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wgbx/image-duplicates-webpack-plugin.git"
+  },
+  "homepage": "https://github.com/wgbx/image-duplicates-webpack-plugin",
   "exports": {
     ".": {
       "require": "./dist/image-duplicates-webpack-plugin.cjs",
@@ -17,7 +21,7 @@
   "main": "dist/image-duplicates-webpack-plugin.cjs",
   "module": "dist/image-duplicates-webpack-plugin.mjs",
   "scripts": {
-    "build": "rollup --config ./rollup.config.js"
+    "build": "rollup --config ./rollup.config.mjs"
   },
   "author": "微光北下",
   "license": "MIT",
