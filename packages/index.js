@@ -3,10 +3,6 @@ const { resolve, join, extname } = require('node:path')
 const log = require('picocolors')
 const { createHash } = require('crypto');
 
-type Item = {
-  相同图片: any[];
-}
-
 const defaultOptions = {
   imagePath: 'src',
   imageType: ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.svg', '.webp'],
@@ -70,7 +66,7 @@ class ImageDuplicatesWebpackPlugin {
   apply() {
     const userOptions = { ...defaultOptions, ...this.options }
     const dataMap = getFileMap(userOptions)
-    const sameFile: Item[] = []
+    const sameFile = []
     dataMap.forEach((item) => {
       if (item.length > 1) {
         sameFile.push({ '相同图片': item })
