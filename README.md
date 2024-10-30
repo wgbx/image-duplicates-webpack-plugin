@@ -11,7 +11,7 @@
 | `imageType`    | No           | The image types to be searched | ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.svg', '.webp']|`Array<string>` |
 | `outputResourcePathFormat`    | No           | The output resource path format | false      | `Boolean` |
 
-## [Installation](https://www.npmjs.com/package/image-duplicates-webpack-plugin)
+## Installation
 
 ```bash
 npm install image-duplicates-webpack-plugin -D
