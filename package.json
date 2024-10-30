@@ -1,5 +1,5 @@
 {
-  "name": "image-duplicates-webpack-plugin",
+  "name": "@wgbx/image-duplicates-webpack-plugin",
   "version": "0.0.8",
   "description": "查找项目中是否有重复图片",
   "keywords": [
@@ -17,6 +17,9 @@
       "require": "./dist/image-duplicates-webpack-plugin.cjs",
       "import": "./dist/image-duplicates-webpack-plugin.mjs"
     }
+  },
+  "publishConfig": {
+    "@wgbx:registry": "https://npm.pkg.github.com"
   },
   "main": "dist/image-duplicates-webpack-plugin.cjs",
   "module": "dist/image-duplicates-webpack-plugin.mjs",
